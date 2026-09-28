@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="uz"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<title>NEXAR ESPORTS</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap">
+<style>
+:root{--r:#e5142d;--bg:#0a0a0c;--c:#131318;--c2:#1b1c23;--g:#f5b800;--gr:#22c55e;--or:#f59e0b;--m:#ffffff80;color-scheme:dark;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:#fff;font-family:-apple-system,Segoe UI,Roboto,sans-serif}
+::-webkit-scrollbar{display:none}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+input,textarea{width:100%;background:var(--c2);border:1px solid #ffffff1a;border-radius:10px;padding:11px 13px;font-size:14px;color:#fff;outline:0;margin-bottom:10px}
+input:focus,textarea:focus{border-color:var(--r)}label{display:block;font-size:11px;color:var(--m);margin:2px 0 5px}
+.row{display:flex;align-items:center}.sb{justify-content:space-between}.mu{font-size:11px;color:var(--m)}
+#splash{position:fixed;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:300;transition:opacity .45s}
+.sl{font-weight:900;font-size:46px;letter-spacing:3px;font-style:italic;position:relative;overflow:hidden;padding:0 8px}
+.sl i{display:inline-block;opacity:0;transform:translateY(24px) skewX(-8deg);animation:li .5s cubic-bezier(.2,.9,.3,1) forwards}
+.sl:after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,#e5142daa,transparent);animation:sw 1.1s .7s ease-in-out}
+.se{color:var(--r);font-weight:800;letter-spacing:9px;font-size:14px;opacity:0;animation:li .5s .9s forwards;margin-top:2px}
+.sp{margin-top:26px;width:120px;height:3px;background:#ffffff1a;border-radius:3px;overflow:hidden}.sp b{display:block;height:100%;background:var(--r);width:0;animation:ld 1.9s ease-in-out forwards}
+@keyframes li{to{opacity:1;transform:translateY(0) skewX(-8deg)}}@keyframes sw{to{left:120%}}@keyframes ld{to{width:100%}}
+#app{display:none;max-width:480px;margin:0 auto;padding-bottom:70px;min-height:100vh}
+.top{display:flex;align-items:center;gap:9px;padding:12px 14px 8px}
+.nx{width:38px;height:38px;border-radius:11px;background:var(--r);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;box-shadow:0 0 18px #e5142d66}
+.tt{flex:1;line-height:1.05}.tt b{font-size:16px;font-weight:900;letter-spacing:.02em}.tt small{display:block;color:var(--r);font-weight:800;font-size:10px;letter-spacing:.14em}
+.ib{width:36px;height:36px;border-radius:50%;background:var(--c2);border:1px solid #ffffff14;position:relative;font-size:14px}
+.ib i{position:absolute;top:-2px;right:-2px;background:var(--r);font-size:9px;font-style:normal;font-weight:800;min-width:15px;height:15px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.adm{background:var(--r);font-weight:800;font-size:10px;padding:7px 11px;transform:skewX(-8deg);border-radius:5px;display:none}.adm span{display:inline-block;transform:skewX(8deg)}
+.av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--r),#7a0a18);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+.demo{display:flex;justify-content:flex-end;gap:6px;padding:0 14px;font-size:9px;color:#ffffff55;align-items:center}
+.demo button{border:1px solid #ffffff26;border-radius:12px;padding:3px 9px;font-size:9px;color:#ffffff88}.demo button.on{background:var(--r);border-color:var(--r);color:#fff}
+.pg{padding:8px 14px}
+.ban{position:relative;padding:20px 16px;margin-bottom:12px;background:linear-gradient(160deg,#1a1216,#0c0c10);border:1px solid #ffffff0f;clip-path:polygon(0 0,90% 0,100% 15%,100% 100%,10% 100%,0 85%)}
+.tag{display:inline-block;background:var(--r);font-weight:800;font-size:10px;letter-spacing:.06em;padding:5px 12px;transform:skewX(-10deg);margin-bottom:12px}
+.ban h1{margin:0;font-size:27px;line-height:1.05;font-weight:900}.ban h1 em{font-style:normal;color:var(--r)}.ban p{margin:8px 0 0;font-size:12px;color:var(--m)}
+.hof{display:flex;align-items:center;gap:12px;background:var(--c);border:1px solid #ffffff0f;border-radius:14px;padding:12px 14px;margin-bottom:12px;width:100%;text-align:left}
+.hof b{font-size:13px;letter-spacing:.04em}.hof div{flex:1}
+.chs{display:flex;gap:8px;overflow-x:auto;margin-bottom:10px}
+.ch{flex:none;padding:9px 16px;font-size:11px;font-weight:800;background:var(--c2);color:#ffffff99;transform:skewX(-10deg);white-space:nowrap;cursor:pointer;margin:0 0 2px}
+.ch.on{background:var(--r);color:#fff;box-shadow:0 0 14px #e5142d55}
+.st{display:flex;gap:7px;overflow-x:auto;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #ffffff0f}
+.st button{flex:none;padding:7px 14px;border-radius:18px;font-size:10px;font-weight:800;border:1px solid #ffffff1f;color:#ffffff80}.st button.on{border-color:var(--r);color:var(--r);background:#e5142d14}
+.btn{flex:1;padding:12px;border-radius:11px;font-size:13px;font-weight:800;border:1px solid #ffffff22;text-align:center}.btn.p{background:var(--r);border-color:var(--r);box-shadow:0 0 16px #e5142d44}.btn.o{border-color:#e5142d88;color:var(--r)}
+.tc{width:100%;text-align:left;background:var(--c);border:1px solid #ffffff0d;border-radius:14px;padding:13px;margin-bottom:10px;display:block}
+.tc:active{transform:scale(.985)}.tn{font-weight:800;font-size:14px}
+.chip{font-size:9px;font-weight:800;padding:4px 9px;border-radius:12px;white-space:nowrap}
+.tg{display:inline-block;font-size:10px;color:#ffffffb0;border:1px solid #ffffff22;border-radius:6px;padding:2px 7px;margin:8px 5px 0 0}
+.pr{height:4px;background:#ffffff10;border-radius:4px;margin-top:10px;overflow:hidden}.pr b{display:block;height:100%;background:var(--r)}
+nav{position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:0 auto;background:#0c0c10f2;backdrop-filter:blur(8px);border-top:1px solid #ffffff14;display:flex;z-index:20;padding-bottom:env(safe-area-inset-bottom,0)}
+nav button{flex:1;position:relative;padding:7px 0 5px;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:9px;font-weight:800;letter-spacing:.06em;color:#ffffff50}nav button i{font-style:normal;font-size:16px}
+nav button.on{color:var(--r)}nav button.on:before{content:"";position:absolute;top:0;left:38%;right:38%;height:2px;background:var(--r);box-shadow:0 0 8px var(--r)}
+#det,#srch{position:fixed;inset:0;z-index:50;background:var(--bg);overflow-y:auto;max-width:480px;margin:0 auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.16,1,.3,1);will-change:transform}
+#det.in,#srch.in{transform:none}
+.dh{position:sticky;top:0;z-index:3;background:#0a0a0cf2;display:flex;align-items:center;gap:10px;padding:12px 14px}.bk{width:34px;height:34px;border-radius:50%;background:var(--c2);border:1px solid #ffffff1a}
+.hero{margin:0 14px 12px;padding:20px 16px;background:radial-gradient(circle at 15% 10%,#e5142d30,transparent 60%),linear-gradient(160deg,#181519,#0d0d11);clip-path:polygon(0 0,92% 0,100% 100%,0 100%);border:1px solid #ffffff0f}
+.hero h2{margin:8px 0 0;font-size:22px;font-weight:900}
+.nt{margin:0 14px 12px;padding:11px 13px;border-radius:12px;font-size:12px;font-weight:700}
+.tabs{display:flex;margin:0 14px 12px;background:var(--c);border-radius:11px;padding:3px}.tabs button{flex:1;padding:9px;border-radius:9px;font-size:11px;font-weight:800;color:#ffffff70}.tabs button.on{background:var(--r);color:#fff}
+.g8{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 14px}
+.sl8{aspect-ratio:1;border-radius:12px;border:1px solid #ffffff1a;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#ffffff90;padding:3px;min-width:0}
+.sl8 small{font-size:8px;font-weight:600;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sl8.LOCKED{border-color:#e5142d99;background:#e5142d18;color:#fff}.sl8.PENDING{border-color:#f59e0b99;background:#f59e0b14;color:var(--or)}
+.sec{margin:12px 14px;background:var(--c);border:1px solid #ffffff0d;border-radius:14px;padding:13px}
+.h{font-size:10px;font-weight:800;color:var(--m);letter-spacing:.08em;margin-bottom:9px}
+.rt{font-size:11px;font-weight:900;letter-spacing:.1em;color:var(--r);margin:14px 14px 8px}
+.mc{margin:0 14px 10px;background:var(--c);border:1px solid #ffffff0d;border-radius:13px;padding:8px}
+.pw{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:9px;background:var(--c2);font-size:13px;font-weight:700;width:100%;text-align:left;border-left:3px solid transparent}
+.pw.w{border-left-color:var(--r);background:#e5142d1c}.pw.l{opacity:.4}.pw.e{color:#ffffff40;font-weight:500}
+.vs{text-align:center;font-size:9px;font-weight:800;color:#ffffff40;padding:3px 0;letter-spacing:.2em}
+.sq{width:24px;height:24px;border-radius:7px;background:#ffffff14;display:flex;align-items:center;justify-content:center;font-size:11px;flex:none}
+.rm{margin-top:7px;font-size:11px;background:#e5142d14;border:1px dashed #e5142d66;border-radius:9px;padding:7px 10px;display:flex;justify-content:space-between}
+.champ{margin:6px 14px 14px;text-align:center;padding:18px;border-radius:16px;border:1px solid var(--g);background:linear-gradient(160deg,#f5b80022,#0d0d11);color:var(--g)}
+.champ b{display:block;font-size:22px;letter-spacing:.05em;margin-top:4px}
+.bg8{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.bd{border-radius:11px;background:var(--c2);border:1px solid #ffffff0d;opacity:.3;padding:8px 2px;text-align:center}.bd i{display:block;font-style:normal;font-size:20px}.bd b{display:block;font-size:8px;margin-top:3px;letter-spacing:.02em}
+.bd.on{opacity:1;border-color:var(--r);box-shadow:0 0 12px #e5142d44}.bd.ed{cursor:pointer;opacity:.55}.bd.ed.on{opacity:1}
+.mo{position:fixed;inset:0;background:#000000d0;z-index:100;display:flex;align-items:flex-end;justify-content:center}
+.md{background:var(--bg);width:100%;max-width:480px;max-height:90vh;overflow-y:auto;border-radius:20px 20px 0 0;border-top:1px solid #ffffff1a;padding:18px 16px 22px;animation:up .28s cubic-bezier(.16,1,.3,1)}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.mt{font-weight:900;font-size:16px;margin-bottom:3px}.fc{background:var(--c2);border-radius:11px;padding:10px 12px;margin:12px 0}
+.pi{background:#e5142d12;border:1px solid #e5142d55;border-radius:11px;padding:10px 12px;font-size:12px;margin-bottom:10px;line-height:1.5}
+.up{display:block;text-align:center;border:1px dashed #ffffff40;border-radius:11px;padding:13px;font-size:12px;margin-bottom:10px;cursor:pointer}#pv{width:100%;max-height:150px;object-fit:contain;border-radius:10px;margin-bottom:10px}
+.mo .row{gap:8px;margin-top:6px}
+.ar{background:var(--c2);border-radius:12px;padding:10px;margin-bottom:8px}.as{font-size:10px;color:var(--m);margin-bottom:5px}
+.mini{font-size:11px;font-weight:800;padding:6px 11px;border-radius:16px}.mini.g{background:#22c55e26;color:#4ade80}.mini.d{background:#e5142d26;color:#ff5a6e}
+.pay{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11px;color:#ffffffa0}.pay img{width:36px;height:36px;object-fit:cover;border-radius:7px}
+.ban2{position:fixed;top:8px;left:50%;transform:translate(-50%,-140%);width:calc(100% - 20px);max-width:460px;background:#16161c;border:1px solid #e5142d77;border-radius:14px;padding:11px 13px;z-index:400;font-size:12px;line-height:1.45;transition:transform .35s cubic-bezier(.16,1,.3,1);box-shadow:0 8px 30px #000a}
+.ban2.on{transform:translate(-50%,0)}.bh{font-size:10px;font-weight:900;letter-spacing:.1em;color:var(--r);margin-bottom:3px}
+.bub{background:var(--c2);border-radius:4px 14px 14px 14px;padding:10px 12px;margin-bottom:9px;font-size:12px;line-height:1.5}.bub small{display:block;color:var(--m);font-size:9px;margin-bottom:4px}
+#toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1c1c24;border:1px solid #e5142d66;padding:9px 16px;border-radius:18px;font-size:12px;z-index:500;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}#toast.on{opacity:1}
+.pl{display:flex;align-items:center;gap:11px;background:var(--c);border-radius:12px;padding:10px 12px;margin-bottom:8px;width:100%;text-align:left}
+.ban h1,.hero h2,.tn,.mt,.tt b,.sl,.tag,.champ b,.rt,.h,.hof b,.ch,.st button,nav button,.chip{font-family:Oswald,"Arial Narrow",Impact,sans-serif;letter-spacing:.04em}.ban h1{font-size:32px;letter-spacing:.02em}.hero h2{font-size:26px}.tn{font-size:16px}
+.fq{background:var(--c2);border-radius:11px;padding:11px 13px;margin-bottom:8px;font-size:13px}.fq summary{font-weight:700;cursor:pointer}.fq div{margin-top:8px;font-size:12px;color:#ffffffb0;line-height:1.5}
+.sp2{margin-top:10px;font-size:10px;color:#ffffff90;letter-spacing:.06em}.sp2 b{color:#fff}.sp2 a{color:var(--r);cursor:pointer}
+textarea{resize:none}
+</style></head><body>
+<div id="splash"><div class="sl" id="sl"></div><div class="se">ESPORTS</div><div class="sp"><b></b></div></div>
+<div id="app">
+<div class="top"><div class="nx">NX</div><div class="tt"><b>NEXAR ESPORTS</b><small>PUBG MOBILE</small></div>
+<button class="ib" onclick="srch()">🔍</button><button class="ib" onclick="inbox()">🔔<i id="dot" style="display:none">0</i></button>
+<div class="adm" id="adm">🛡️ <span>ADMIN</span></div><div class="av" id="tav">?</div></div>
+<div class="demo">Demo:<button id="dm" onclick="tgl()">Admin</button></div>
+<div id="main"></div>
+<nav><button id="nt" class="on" onclick="tab('t')"><i>🏆</i>TURNIR</button><button id="np" onclick="tab('p')"><i>👤</i>PROFIL</button></nav>
+</div>
+<div id="det"></div><div id="srch"></div><div class="ban2" id="ban"></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+const B=[['CHAMPION','🏆','Turnir g‘olibi'],['ELITE','⚡','Elite daraja'],['MVP','🔥','Eng yaxshi o‘yinchi'],['SNIPER','🎯','Aniqligi yuqori'],['VETERAN','🛡️','Ko‘p turnirda qatnashgan'],['LEGEND','💎','Maxsus yuqori daraja'],['TOP PLAYER','👑','Reytingdagi kuchli'],['RISING STAR','🚀','Tez rivojlanayotgan']];
+const SC={FAOL:'#22c55e',KUTILMOQDA:'#f59e0b',"TO'LDI":'#f59e0b',YAKUNLANGAN:'#e5142d'};
+const NM=['Sniper_UZ','NightFox','Viper','Shadow','Toxic','Kaiser','Reaper','Blaze','Ghost','Nova','Storm','Ace'];
+let P=NM.map((n,i)=>({id:i+1,nick:n,pid:String(510000000+i*7391),tg:n.toLowerCase(),b:i%3==0?['VETERAN']:i==4?['MVP','SNIPER']:[]}));
+const me={id:0,nick:'',pid:'',tg:'mirzhayev',b:[]};P.push(me);
+try{Object.assign(me,JSON.parse(localStorage.nx||'{}'))}catch(e){}
+let adm=false,tb='t',cat='HAMMASI',stt='BARCHA HOLAT',q='',cur=null,dtab='s',log=[],unread=0,aid=10,shot=null;
+const pl=u=>P.find(p=>p.id===u),nm=u=>u==null?'—':(pl(u)&&pl(u).nick)||'—';
+const rnd=()=>String(Math.floor(1e6+Math.random()*9e6)),pw=()=>Math.random().toString(36).slice(2,6).toUpperCase();
+const fee=t=>t.fee?t.fee.toLocaleString('ru')+" so'm":'BEPUL';
+const mk=(id,title,mode,map,cat,status,f,n,lk)=>({id,title,mode,map,cat,status,fee:f,pay:f?"Karta: 8600 1234 5678 9012 · NEXAR ESPORTS":'',n,slots:Array.from({length:n},(_,i)=>({s:i<lk?'LOCKED':'OPEN',u:i<lk?i+1:null})),rounds:null,champ:null,wl:[],team:1,rules:'',start:0});
+let T=[mk(1,'NEXAR CUP #12','TDM','','ELITE','FAOL',0,8,7),mk(2,'ERANGEL MEGA CUP','BOSHQA','Erangel','PRO','FAOL',15000,20,5),mk(3,'GIRLS SHOWDOWN','TDM','','GIRLS',"TO'LDI",0,8,8),mk(4,'LIVIK BATTLE #3','BOSHQA','Livik','ELITE','YAKUNLANGAN',0,16,16)];
+T[1].slots[5]={s:'PENDING',u:9};T[3].champ=3;
+let apps=[{id:1,t:2,n:6,u:9,shot:'seed'}];
+P[8].pid=P[0].pid;[3,1,2,2,1,0,4,0,0,1,0,0,0].forEach((w,i)=>P[i].w=w);P[6].b.push('TOP PLAYER');
+T[0].rules="1) Faqat o'z akkauntingiz bilan o'ynang.\n2) Room ma'lumotini boshqalarga bermang.\n3) Kechikkan o'yinchi texnik mag'lub hisoblanadi.";
+T[0].start=Date.now()+45*60000;T[1].start=Date.now()+90*60000;T.push(mk(5,'SANHOK NIGHT','BOSHQA','Sanhok','PRO','KUTILMOQDA',0,12,3));T[4].start=Date.now()+75000;
+let hp=false,reqs=[],aud=[],helpers=[],ban=new Set(),sp={t:'NEXAR × GAMESTORE'},rq=0;
+const cd=ms=>{const s=Math.max(0,Math.floor(ms/1000));return [s/3600|0,s%3600/60|0,s%60].map(x=>String(x).padStart(2,'0')).join(':')};
+const tm=t=>t.team==2?'DUO':t.team==4?'SQUAD':'SOLO';
+const cdS=t=>t.start>Date.now()?`<span class=tg data-s=${t.start}>⏱ ${cd(t.start-Date.now())}</span>`:'';
+const can=()=>adm||hp;
+const ad=x=>{aud.unshift({x,t:new Date().toLocaleTimeString('uz',{hour:'2-digit',minute:'2-digit'}),r:adm?'Admin':'Yordamchi'})};
+const FQ=[["To'lov qanday qilinadi?","Pullik turnirda «Qo'shilish» ni bosing, to'lovni rekvizitlarga o'tkazing va skrinshotni yuklang. Admin tasdiqlagach slotingiz band bo'ladi."],["Room ID qachon beriladi?","Setka shakllangach o'z juftligingiz kartasida Room ID va parol chiqadi. Uni faqat siz va raqibingiz ko'radi."],["Arizam tasdiqlanmasa?","Bot sizga xabar yuboradi. Savollar uchun @mirzhayev ga yozing."],["Turnirdan chiqib ketsam?","Turnir ichida «Arizani bekor qilish» ni bosing. Pullik bo'lsa, qaytarish so'rovi adminga ketadi."],["Zaxira nima?","Joylar to'lganda zaxiraga yozilasiz. Kimdir chiqsa, o'rin avtomatik sizga beriladi."]];
+function freeSlot(t,n){t.slots[n-1]={s:'OPEN',u:null};if(t.wl.length){const u=t.wl.shift();t.slots[n-1]={s:'PENDING',u};apps.push({id:++aid,t:t.id,n,u,shot:null,tm:[]});bot(u,`🎉 <b>Zaxiradan o'rin bo'shadi!</b><br>🏆 ${t.title}<br>🎯 Slot #${n}<br>⏳ Arizangiz admin ko'rib chiqishiga yuborildi`)}}
+function rank(){const top=[...P].filter(p=>p.nick&&p.w>0).sort((a,b)=>b.w-a.w)[0];P.forEach(p=>{const i=p.b.indexOf('TOP PLAYER');if(i>=0&&p!==top)p.b.splice(i,1)});if(top&&!top.b.includes('TOP PLAYER')){top.b.push('TOP PLAYER');bot(top.id,`👑 <b>Yangi nishon!</b><br>TOP PLAYER — reyting yetakchisi!`)}}
+function setChamp(t,u){if(t.champ!=null&&pl(t.champ))pl(t.champ).w=(pl(t.champ).w||1)-1;t.champ=u;pl(u).w=(pl(u).w||0)+1;t.status='YAKUNLANGAN';rank()}
+setInterval(()=>{document.querySelectorAll('[data-s]').forEach(e=>e.textContent='⏱ '+cd(+e.dataset.s-Date.now()));let ch=0;T.forEach(t=>{if(!t.start||t.status=='YAKUNLANGAN')return;const d=t.start-Date.now();if(d<=0){if(t.status=='KUTILMOQDA'){t.status='FAOL';bot(-1,`🚀 <b>${t.title}</b> boshlandi!<br>Status: <b>FAOL</b>`)}t.start=0;ch=1}else if(d<=6e5&&!t.r10){t.r10=t.r30=1;bot(-1,`⏰ <b>${t.title}</b> — 10 daqiqadan keyin boshlanadi!<br>Tayyor bo'ling 🔥`)}else if(d<=18e5&&!t.r30){t.r30=1;bot(-1,`⏰ <b>${t.title}</b> — 30 daqiqadan keyin boshlanadi!`)}});if(ch)refresh()},1000);
+const cf=(msg,call)=>modal(`<div class=mt>${msg}</div><div class=row style="margin-top:14px"><button class=btn onclick=closeM()>Yo'q</button><button class="btn p" onclick="closeM();${call}">Ha</button></div>`);
+function gen(t){const L=t.slots.filter(s=>s.s==='LOCKED').map(s=>s.u);let sz=2;while(sz<L.length)sz*=2;const pr=sz/2,two=L.length-pr,m=[];let k=0;
+for(let i=0;i<pr;i++){const a=L[k++],b=i<two?L[k++]:null;m.push({a,b:b===undefined?null:b,w:b==null?a:null,room:b==null?null:rnd(),pw:b==null?null:pw()})}
+t.rounds=[m];while(t.rounds[t.rounds.length-1].length>1)t.rounds.push(Array.from({length:t.rounds[t.rounds.length-1].length/2},()=>({a:null,b:null,w:null,room:null,pw:null})));prop(t)}
+function prop(t){const R=t.rounds;for(let r=0;r<R.length-1;r++)R[r].forEach((m,i)=>{const n=R[r+1][i>>1];n[i%2?'b':'a']=m.w;if(n.a!=null&&n.b!=null&&!n.room){n.room=rnd();n.pw=pw()}})}
+const sn=(t,r)=>{const c=t.rounds[r].length;return c==1?'FINAL':c==2?'YARIM FINAL':c==4?'CHORAK FINAL':'1/'+c+' FINAL'};
+gen(T[2]);[0,1].forEach(i=>{T[2].rounds[0][i].w=T[2].rounds[0][i].a});prop(T[2]);
+const lab=to=>to===-1?'HAMMAGA':to===0?'SIZGA':'@'+nm(to);
+function bot(to,h){log.unshift({to,h,t:new Date().toLocaleTimeString('uz',{hour:'2-digit',minute:'2-digit'})});unread++;const b=$('#ban');b.innerHTML='<div class=bh>🤖 NEXAR BOT → '+lab(to)+'</div>'+h;b.classList.add('on');clearTimeout(bot.k);bot.k=setTimeout(()=>b.classList.remove('on'),3800);hdr()}
+function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('on');clearTimeout(toast.k);toast.k=setTimeout(()=>e.classList.remove('on'),1700)}
+const dg=e=>e.value=e.value.replace(/[^0-9]/g,'');
+function hdr(){$('#adm').style.display=can()?'flex':'none';$('#adm').innerHTML='🛡️ <span>'+(adm?'ADMIN':'YORDAMCHI')+'</span>';$('#dm').className=can()?'on':'';$('#dm').textContent=adm?'Admin':hp?'Yordamchi':"O'yinchi";$('#tav').textContent=(me.nick||'?')[0].toUpperCase();const d=$('#dot');d.style.display=unread?'flex':'none';d.textContent=unread}
+function tgl(){if(!adm&&!hp)hp=true;else if(hp){hp=false;adm=true}else adm=false;refresh()}
+function tab(x){tb=x;$('#nt').className=x=='t'?'on':'';$('#np').className=x=='p'?'on':'';main()}
+function refresh(){hdr();main();if(cur)det()}
+const chip=s=>`<span class=chip style="background:${SC[s]}22;color:${SC[s]}">${s}</span>`;
+function cards(){return T.filter(t=>(cat=='HAMMASI'||t.cat==cat)&&(stt=='BARCHA HOLAT'||t.status==stt)&&t.title.toLowerCase().includes(q.toLowerCase())).map(t=>{const lk=t.slots.filter(s=>s.s=='LOCKED').length;
+return `<button class=tc onclick="openT(${t.id})"><div class="row sb"><div><div class=tn>${t.title}</div><div class=mu>${t.cat}</div></div>${chip(t.status)}</div>
+<span class=tg>${t.mode=='TDM'?'⚔️ TDM':'🗺 '+t.map}</span>${t.team>1?`<span class=tg>👥 ${tm(t)}</span>`:''}<span class=tg>💰 ${fee(t)}</span><span class=tg>🎯 ${lk}/${t.n}</span>${cdS(t)}${t.champ!=null?`<span class=tg style="color:var(--g);border-color:var(--g)">🏆 ${nm(t.champ)}</span>`:''}
+<div class=pr><b style="width:${lk/t.n*100}%"></b></div></button>`}).join('')||'<div class=mu style="text-align:center;padding:30px">Turnir topilmadi</div>'}
+const spH=()=>sp.t?`<div class=sp2>🤝 HOMIY: <b>${sp.t}</b>${adm?` <a onclick=spm()>✏️</a>`:''}</div>`:adm?`<div class=sp2><a onclick=spm()>+ Homiy qo'shish</a></div>`:'';
+function spm(){modal(`<div class=mt>🤝 Homiy banneri</div><div class=mu style="margin-bottom:10px">Bo'sh qoldirsangiz, homiy o'chadi</div><input id=spi value="${sp.t}" placeholder="Homiy nomi"><div class=row><button class=btn onclick=closeM()>Bekor</button><button class="btn p" onclick=sspm()>Saqlash</button></div>`)}
+function sspm(){sp.t=$('#spi').value.trim();ad('Homiy: '+(sp.t||'olib tashlandi'));closeM();main()}
+function main(){const m=$('#main');if(tb=='p')return prof(m);
+m.innerHTML=`<div class=pg><div class=ban><span class=tag>🔥 LIVE SEASON</span><h1>PUBG MOBILE<br><em>TURNIRLARI</em></h1><p>Slotni band qiling, setkada o'z o'rningizni oling.</p>${spH()}</div>
+<button class=hof onclick=hof()><span style="font-size:24px">👑</span><div><b>HALL OF FAME</b><div class=mu>Barcha chempionlar va top o'yinchilar</div></div><span style="color:var(--g)">→</span></button>
+<input placeholder="Turnir qidirish..." value="${q}" oninput="q=this.value;$('#tl').innerHTML=cards()">
+<div class=chs>${['HAMMASI','ELITE','PRO','GIRLS'].map(c=>`<b class="ch ${c==cat?'on':''}" onclick="cat='${c}';main()"><span style="display:inline-block;transform:skewX(10deg)">${c}</span></b>`).join('')}</div>
+<div class=st>${['BARCHA HOLAT','FAOL',"TO'LDI",'KUTILMOQDA','YAKUNLANGAN'].map(s=>`<button class="${s==stt?'on':''}" onclick="stt=&quot;${s}&quot;;main()">${s}</button>`).join('')}</div>
+${adm?'<button class="btn o" style="width:100%;margin-bottom:12px" onclick=create()>+ Turnir yaratish</button>':''}<div id=tl>${cards()}</div></div>`}
+function openT(id){cur=id;dtab='s';det();requestAnimationFrame(()=>$('#det').classList.add('in'))}
+function closeDet(){$('#det').classList.remove('in');cur=null}
+const appRow=a=>{const t=T.find(x=>x.id==a.t),p=pl(a.u),d=P.find(x=>x.id!=p.id&&x.nick&&x.pid==p.pid),fl=ban.has(p.id)?"🚫 Bloklangan o'yinchi":d?`⚠️ Shubhali: bu ID ${d.nick} akkauntida ham bor`:'';return `<div class=ar><div class=as>${t.title} · Slot #${a.n}</div><div class="row sb"><div><b>${p.nick}</b><div class=mu>ID ${p.pid}</div>${a.tm&&a.tm.length?`<div class=mu>👥 Jamoa ID: ${a.tm.join(', ')}</div>`:''}</div><div class=row style="gap:6px;margin:0"><button class="mini g" onclick="dec(${a.id},1)">✓ Tasdiq</button><button class="mini d" onclick="dec(${a.id},0)">✕ Rad</button></div></div>${fl?`<div class=pay style="color:var(--or)">${fl}</div>`:''}${t.fee?`<div class=pay>${a.shot&&a.shot!='seed'?`<img src="${a.shot}">`:'🧾'}<span>💳 ${a.shot?"To'lov cheki":"Chek kutilmoqda (zaxiradan)"} · ${fee(t)}</span></div>`:''}</div>`};
+const rqRow=r=>`<div class=ar><div class=as>${r.type=='NIZO'?'⚠️ NIZO':'💸 QAYTARISH'} · ${nm(r.u)}</div><div style="font-size:12px;margin-bottom:8px">${r.txt}</div><button class="mini g" onclick=rs(${r.id})>✓ Hal qilindi</button></div>`;
+function rs(id){const r=reqs.find(x=>x.id==id);reqs=reqs.filter(x=>x.id!=id);ad((r.type=='NIZO'?'Nizo':'Qaytarish')+' hal qilindi: '+nm(r.u));bot(r.u,`✅ <b>${r.type=='NIZO'?`Nizo ko'rib chiqildi`:`Qaytarish so'rovi qabul qilindi`}</b><br>Admin javobi tez orada yuboriladi.`);refresh()}
+const wide=(c,on,x)=>`<button class="${c}" style="display:block;margin:12px 14px 0;width:calc(100% - 28px)" onclick="${on}">${x}</button>`;
+function det(){const t=T.find(x=>x.id==cur);if(!t)return;const el=$('#det'),sc=el.scrollTop,lk=t.slots.filter(s=>s.s=='LOCKED').length,mine=t.slots.find(s=>s.u===me.id),full=!t.slots.some(s=>s.s=='OPEN');
+let h=`<div class=dh><button class=bk onclick=closeDet()>←</button><b style="flex:1;font-size:14px">${t.title}</b>${chip(t.status)}</div>
+<div class=hero><span class=tag>${t.cat}</span><h2>${t.title}</h2><span class=tg>${t.mode=='TDM'?'⚔️ TDM':'🗺 '+t.map}</span>${t.team>1?`<span class=tg>👥 ${tm(t)}</span>`:''}<span class=tg>💰 ${fee(t)}</span><span class=tg>🎯 ${lk}/${t.n}</span>${cdS(t)}</div>`;
+if(mine)h+=mine.s=='PENDING'?`<div class=nt style="background:#f59e0b18;color:var(--or);border:1px solid #f59e0b55">⏳ Arizangiz ko'rib chiqilmoqda${t.fee?" · to'lov cheki adminga yuborildi":''}</div>`:`<div class=nt style="background:#22c55e18;color:#4ade80;border:1px solid #22c55e55">✅ Siz turnirdasiz · Slot #${t.slots.indexOf(mine)+1}</div>`;
+else if(t.wl.includes(me.id))h+=`<div class=nt style="background:#f59e0b18;color:var(--or);border:1px solid #f59e0b55">📋 Siz zaxiradasiz · navbat: ${t.wl.indexOf(me.id)+1}</div>`;
+if(t.mode=='TDM')h+=`<div class=tabs><button class="${dtab=='s'?'on':''}" onclick="dtab='s';det()">SLOTLAR</button><button class="${dtab=='b'?'on':''}" onclick="dtab='b';det()">SETKA</button></div>`;
+if(dtab=='s'||t.mode!='TDM'){if(t.rules)h+=`<div class=sec style="margin-top:0"><div class=h>📜 QOIDALAR</div><div style="font-size:12px;white-space:pre-line;color:#ffffffc0;line-height:1.5">${t.rules}</div></div>`;
+h+=`<div class=g8>${t.slots.map((s,i)=>`<button class="sl8 ${s.s}" onclick="slot(${t.id},${i})"><span>#${i+1}</span>${s.u!=null?`<small>${nm(s.u)}</small>`:''}</button>`).join('')}</div>`;
+if(mine&&!t.rounds)h+=wide('btn','leave('+t.id+')','↩️ Arizani bekor qilish');
+if(full&&!mine&&t.status!='YAKUNLANGAN'&&!t.wl.includes(me.id))h+=wide('btn o','wl('+t.id+')',`📋 Zaxiraga yozilish (${t.wl.length} kishi)`);
+if(t.mode!='TDM'&&t.champ!=null)h+=`<div class=champ style="margin-top:14px">🏆 CHEMPION<b>${nm(t.champ)}</b></div>`+wide('btn o','cc('+t.id+')','🖼 Chempion kartasi')}
+else{if(!t.rounds)h+=`<div class=sec><div class=mu style="text-align:center;padding:14px">Setka hali yaratilmagan.<br>Slotlar to'lgach admin setkani shakllantiradi.</div></div>`;
+else{t.rounds.forEach((R,r)=>{h+=`<div class=rt>${sn(t,r)}</div>`;R.forEach((m,i)=>{const row=u=>u==null?`<div class="pw e"><span class=sq>?</span>${r?'Kutilmoqda':'BYE'}</div>`:`<button class="pw ${m.w==u?'w':m.w!=null?'l':''}" ${adm?`onclick="win(${t.id},${r},${i},${u})"`:''}><span class=sq>${nm(u)[0]}</span>${nm(u)}${m.w==u?'<span style="margin-left:auto;color:var(--r)">✓</span>':''}</button>`;
+const inM=m.a===me.id||m.b===me.id,opp=m.a===me.id?m.b:m.a;h+=`<div class=mc>${row(m.a)}<div class=vs>VS${m.sc?' · '+m.sc:''}</div>${row(m.b)}${m.room?(adm||inM)?`<div class=rm><span>🔑 Room: <b>${m.room}</b></span><span>Parol: <b>${m.pw}</b>${adm?` <a style="color:var(--r);cursor:pointer" onclick="rr(${t.id},${r},${i})">✏️</a>`:''}</span></div>`:`<div class=rm style="border-style:solid;color:var(--m)">🔒 Room faqat shu juftlik uchun</div>`:''}${inM&&m.a!=null&&m.b!=null?`<div class=row style="gap:6px;margin-top:7px"><a class=mini style="background:#ffffff12;text-decoration:none;color:#fff;flex:1;text-align:center" href="https://t.me/${pl(opp).tg}" target=_blank>✉️ Raqibga yozish</a><button class=mini style="background:#f59e0b22;color:var(--or)" onclick="dsp(${t.id},${r},${i})">⚠️ Nizo</button></div>`:''}</div>`})});
+const c=t.champ;h+=`<div class=champ>🏆 CHEMPION<b>${c!=null?nm(c):'— kutilmoqda —'}</b></div>`;if(c!=null)h+=wide('btn o','cc('+t.id+')','🖼 Chempion kartasi');if(adm)h+=`<div class=mu style="text-align:center;margin:8px 14px 10px">Admin: g'olib o'yinchini bosib belgilang</div>`}}
+if(adm){h+=`<div class=sec style="border-color:#e5142d44"><div class=h style="color:var(--r)">ADMIN · BOSHQARUV</div><div class=row style="gap:6px;flex-wrap:wrap;margin-bottom:10px">${Object.keys(SC).map(s=>`<button class=chip style="border:1px solid ${t.status==s?SC[s]:'#ffffff22'};background:${t.status==s?SC[s]+'33':'none'}" onclick="setS(${t.id},&quot;${s}&quot;)">${s}</button>`).join('')}</div>
+${t.mode=='TDM'?`<button class="btn o" style="width:100%;margin-bottom:8px" onclick=mkb(${t.id})>🎮 ${t.rounds?'Setkani qayta yaratish':'Setka yaratish'}</button>`:`<div class=h>G'OLIBNI BELGILASH</div><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">${t.slots.filter(s=>s.s=='LOCKED').map(s=>`<button class=chip style="border:1px solid ${t.champ==s.u?'var(--g)':'#ffffff33'};color:${t.champ==s.u?'var(--g)':'#fff'}" onclick="pw2(${t.id},${s.u})">🏆 ${nm(s.u)}</button>`).join('')||`<span class=mu>Tasdiqlangan ishtirokchi yo'q</span>`}</div>`}
+<div class=row style="gap:8px;margin-bottom:8px"><button class=btn onclick=rem(${t.id})>⏰ Eslatma</button><button class=btn onclick=dup(${t.id})>📄 Nusxalash</button></div>
+<div class=row style="gap:8px"><button class=btn onclick=edit(${t.id})>✏️ Tahrirlash</button><button class=btn style="color:#ff5a6e" onclick=del(${t.id})>🗑 O'chirish</button></div></div>`}
+if(can()){const pa=apps.filter(a=>a.t==t.id);if(pa.length)h+=`<div class=sec><div class=h>KUTILAYOTGAN ARIZALAR</div>${pa.map(appRow).join('')}</div>`}
+el.innerHTML=h+'<div style="height:30px"></div>';el.scrollTop=sc}
+function slot(tid,i){const t=T.find(x=>x.id==tid),s=t.slots[i];if(s.s=='OPEN')return join(tid,i+1);if(s.u!=null)player(s.u)}
+function modal(h){const m=document.createElement('div');m.className='mo';m.innerHTML='<div class=md>'+h+'</div>';m.onclick=e=>{if(e.target==m)m.remove()};document.body.appendChild(m)}
+function closeM(){const a=document.querySelectorAll('.mo');if(a.length)a[a.length-1].remove()}
+function join(tid,n){const t=T.find(x=>x.id==tid);if(t.status!='FAOL'&&t.status!='KUTILMOQDA'){toast('Qabul hozir yopiq');return}
+if(!me.nick||!me.pid){toast('Avval PROFIL da NIK va ID ni saqlang');closeDet();setTimeout(()=>tab('p'),300);return}
+if(ban.has(me.id)){toast('Siz bloklangansiz');return}
+if(t.slots.some(s=>s.u===me.id)){toast('Siz allaqachon ariza yuborgansiz');return}shot=null;
+modal(`<div class=mt>Slot #${n}</div><div class=mu>${t.title}</div><div class=fc><b>${me.nick}</b><div class=mu>PUBG ID: ${me.pid}</div></div>${t.rules?`<div class=pi style="background:none;border-color:#ffffff22;white-space:pre-line">${t.rules}</div><label style="display:flex;gap:8px;align-items:center;color:#fff;font-size:12px;margin-bottom:10px"><input type=checkbox id=rl style="width:auto;margin:0;padding:0"> Qoidalarni o'qidim va roziman</label>`:''}${t.team>1?`<div class=h>JAMOADOSHLAR PUBG ID</div>${Array.from({length:t.team-1},(_,i)=>`<input class=tmi inputmode=numeric placeholder="${i+2}-o'yinchi PUBG ID" oninput=dg(this)>`).join('')}`:''}${t.fee?`<div class=pi>💳 To'lov summasi: <b>${fee(t)}</b><br>${t.pay}</div><label class=up>📎 To'lov skrinshotini yuklash<input type=file accept="image/*" hidden onchange=pick(this)></label><img id=pv hidden>`:`<div class=mu style="margin-bottom:10px">Admin tasdiqlagach turnirga qo'shilasiz.</div>`}<div class=row><button class=btn onclick=closeM()>Bekor</button><button class="btn p" onclick=send(${tid},${n})>${t.fee?"To'lov qildim · Yuborish":'Ariza yuborish'}</button></div>`)}
+function pick(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{shot=r.result;const p=$('#pv');p.src=shot;p.hidden=false};r.readAsDataURL(f)}
+function send(tid,n){const t=T.find(x=>x.id==tid);if(t.rules&&!$('#rl').checked){toast("Qoidalarni o'qib, belgilang");return}
+const tmv=[...document.querySelectorAll('.tmi')].map(x=>x.value.trim());if(tmv.some(x=>!x)){toast("Jamoadoshlar ID sini kiriting");return}
+if(t.fee&&!shot){toast("Avval to'lov skrinshotini yuklang");return}
+t.slots[n-1]={s:'PENDING',u:me.id};apps.push({id:++aid,t:tid,n,u:me.id,shot,tm:tmv});closeM();
+bot(0,`📨 <b>Ariza qabul qilindi</b><br>🏆 ${t.title}<br>🎯 Slot #${n}${t.fee?`<br>💳 To'lov cheki adminga yuborildi`:''}<br>⏳ Admin tasdig'ini kuting`);refresh()}
+function wl(tid){const t=T.find(x=>x.id==tid);if(!me.nick||!me.pid){toast('Avval PROFIL da NIK va ID ni saqlang');closeDet();setTimeout(()=>tab('p'),300);return}t.wl.push(me.id);bot(0,`📋 <b>Zaxiraga yozildingiz</b><br>🏆 ${t.title}<br>Joy bo'shasa, avtomatik sizga beriladi.`);refresh()}
+function leave(tid){cf('Arizani bekor qilasizmi?','leave2('+tid+')')}
+function leave2(tid){const t=T.find(x=>x.id==tid),i=t.slots.findIndex(s=>s.u===me.id),was=t.slots[i].s;apps=apps.filter(a=>!(a.t==tid&&a.u===me.id));
+if(t.fee&&was=='LOCKED')reqs.push({id:++rq,type:'QAYTARISH',t:tid,u:me.id,txt:`${t.title}: ${fee(t)} qaytarish so'rovi`});
+freeSlot(t,i+1);bot(0,`↩️ <b>Ariza bekor qilindi</b><br>🏆 ${t.title}${t.fee&&was=='LOCKED'?`<br>💸 Qaytarish so'rovi adminga yuborildi`:''}`);refresh()}
+function dsp(tid,r,i){modal(`<div class=mt>⚠️ Nizo yuborish</div><div class=mu style="margin-bottom:10px">Muammoni qisqa yozing, admin ko'rib chiqadi</div><textarea id=dtx rows=3 placeholder="Masalan: natija noto'g'ri belgilangan"></textarea><div class=row><button class=btn onclick=closeM()>Bekor</button><button class="btn p" onclick=sdsp(${tid},${r},${i})>Yuborish</button></div>`)}
+function sdsp(tid,r,i){const t=T.find(x=>x.id==tid),m=t.rounds[r][i],x=$('#dtx').value.trim();if(!x)return toast('Muammoni yozing');reqs.push({id:++rq,type:'NIZO',t:tid,u:me.id,txt:`${t.title} · ${sn(t,r)} · ${nm(m.a)} vs ${nm(m.b)}: ${x}`});closeM();bot(0,`⚠️ <b>Nizo qabul qilindi</b><br>Admin tez orada ko'rib chiqadi.`);refresh()}
+function dec(id,ok){const a=apps.find(x=>x.id==id),t=T.find(x=>x.id==a.t);apps=apps.filter(x=>x.id!=id);
+if(ok){t.slots[a.n-1].s='LOCKED';ad(nm(a.u)+': tasdiqlandi ('+t.title+')');bot(a.u,`✅ <b>Ariza tasdiqlandi!</b><br>🏆 ${t.title}<br>🎯 Slot #${a.n}<br>Omad tilaymiz, ${nm(a.u)}! 🔥`);if(t.slots.every(s=>s.s=='LOCKED'))t.status="TO'LDI"}
+else{ad(nm(a.u)+': rad etildi ('+t.title+')');bot(a.u,`❌ <b>Ariza rad etildi</b><br>🏆 ${t.title}<br>${t.fee?"To'lov tasdiqlanmadi. ":''}Savollar uchun: @mirzhayev`);freeSlot(t,a.n)}refresh()}
+function setS(id,s){const t=T.find(x=>x.id==id);const was=t.status;t.status=s;ad(t.title+': status '+s);if(s=='FAOL'&&was!='FAOL')bot(-1,openMsg(t));refresh()}
+const openMsg=t=>`📢 <b>Qabul ochildi!</b><br>🏆 ${t.title}<br>${t.mode=='TDM'?'⚔️ TDM':'🗺 '+t.map} · 💰 ${fee(t)} · 👥 ${t.n} o'rin<br>Joyingizni hoziroq band qiling 👇`;
+function mkb(id){const t=T.find(x=>x.id==id);if(t.slots.filter(s=>s.s=='LOCKED').length<2){toast('Kamida 2 ta tasdiqlangan ishtirokchi kerak');return}gen(t);dtab='b';ad(t.title+': setka yaratildi');bot(-1,`🎮 <b>${t.title}</b> setkasi tayyor!<br>Bracketni ko'ring va o'z juftligingizni tekshiring.`);refresh()}
+function rr(tid,r,i){const m=T.find(x=>x.id==tid).rounds[r][i];modal(`<div class=mt>🔑 Room va hisob</div><div class=mu style="margin-bottom:12px">${nm(m.a)} vs ${nm(m.b)}</div><label>Room ID (faqat raqam)</label><input id=rid inputmode=numeric value="${m.room||''}" oninput=dg(this)><label>Parol</label><input id=rpw value="${m.pw||''}"><button class=btn style="width:100%;margin-bottom:10px" onclick="$('#rid').value=rnd();$('#rpw').value=pw()">🎲 Random</button><label>Hisob (masalan 25:18)</label><input id=rsc value="${m.sc||''}" placeholder="25:18" oninput="this.value=this.value.replace(/[^0-9:]/g,'')"><div class=row><button class=btn onclick=closeM()>Bekor</button><button class="btn p" onclick=srr(${tid},${r},${i})>Saqlash</button></div>`)}
+function srr(tid,r,i){const m=T.find(x=>x.id==tid).rounds[r][i],id=$('#rid').value.trim(),p=$('#rpw').value.trim();if(!id)return toast('Room ID kiriting');m.room=id;m.pw=p||'—';m.sc=$('#rsc').value.trim();ad(nm(m.a)+' vs '+nm(m.b)+': room/hisob yangilandi');closeM();refresh();toast('Saqlandi ✓')}
+function win(tid,r,i,u){const t=T.find(x=>x.id==tid),m=t.rounds[r][i];if(m.a==null||m.b==null||m.w===u)return;const nx=t.rounds[r+1]&&t.rounds[r+1][i>>1];if(nx&&nx.w!=null){toast("Keyingi bosqich natijasi belgilangan");return}
+m.w=u;prop(t);ad(t.title+' · '+sn(t,r)+': g\'olib '+nm(u));if(r==t.rounds.length-1){setChamp(t,u);bot(u,`🏆 <b>CHEMPION!</b><br>${t.title} turniri g'olibi — <b>${nm(u)}</b>!<br>Tabriklaymiz! 👑`)}else bot(u,`🔥 <b>Tabriklaymiz, ${nm(u)}!</b><br>${t.title}<br>Siz keyingi bosqichga o'tdingiz: <b>${sn(t,r+1)}</b>`);refresh()}
+function pw2(tid,u){const t=T.find(x=>x.id==tid);setChamp(t,u);ad(t.title+': g\'olib '+nm(u));bot(u,`🏆 <b>CHEMPION!</b><br>${t.title} g'olibi — <b>${nm(u)}</b>!<br>Tabriklaymiz! 👑`);refresh()}
+function rem(id){const t=T.find(x=>x.id==id);bot(-1,`⏰ <b>${t.title}</b> — o'yin boshlanishiga oz qoldi!<br>Tayyor bo'ling. Room ma'lumoti setkada.`);ad(t.title+': eslatma yuborildi')}
+function dup(id){const t=T.find(x=>x.id==id),n=JSON.parse(JSON.stringify(t));n.id=Math.max(...T.map(x=>x.id))+1;n.title+=' (nusxa)';n.status='KUTILMOQDA';n.slots=Array.from({length:n.n},()=>({s:'OPEN',u:null}));n.rounds=null;n.champ=null;n.wl=[];n.start=0;T.unshift(n);ad(t.title+': nusxalandi');closeDet();main();toast('Nusxa yaratildi ✓')}
+function cc(tid){const t=T.find(x=>x.id==tid),c=document.createElement('canvas');c.width=600;c.height=800;const x=c.getContext('2d'),g=x.createLinearGradient(0,0,0,800);g.addColorStop(0,'#1a0509');g.addColorStop(1,'#0a0a0c');x.fillStyle=g;x.fillRect(0,0,600,800);x.strokeStyle='#f5b800';x.lineWidth=6;x.strokeRect(24,24,552,752);x.textAlign='center';x.fillStyle='#e5142d';x.font='bold 34px Oswald,Impact,sans-serif';x.fillText('NEXAR ESPORTS',300,110);x.font='150px serif';x.fillText('🏆',300,330);x.fillStyle='#f5b800';x.font='bold 30px Oswald,Impact,sans-serif';x.fillText('CHEMPION',300,420);x.fillStyle='#fff';x.font='bold 64px Oswald,Impact,sans-serif';x.fillText(nm(t.champ).toUpperCase(),300,510);x.font='24px sans-serif';x.fillStyle='#ffffffaa';x.fillText(t.title,300,580);x.fillText(new Date().toLocaleDateString('uz'),300,620);x.fillStyle='#e5142d';x.font='bold 20px sans-serif';x.fillText('PUBG MOBILE · TURNIR',300,730);
+modal(`<div class=mt>🖼 Chempion kartasi</div><img src="${c.toDataURL('image/png')}" style="width:100%;border-radius:12px;margin:12px 0"><div class=mu>Rasmni bosib turing → saqlang yoki Telegram'da ulashing</div>`)}
+function del(id){cf("Turnir o'chirilsinmi?",'del2('+id+')')}
+function del2(id){const t=T.find(x=>x.id==id);ad(t.title+": o'chirildi");T=T.filter(t=>t.id!=id);apps=apps.filter(a=>a.t!=id);closeDet();main()}
+function edit(id){const t=T.find(x=>x.id==id);modal(`<div class=mt>Tahrirlash</div><label>Nomi</label><input id=en value="${t.title}">${t.fee?`<label>Narx (so'm)</label><input id=ef inputmode=numeric value=${t.fee} oninput=dg(this)>`:''}<label>Boshlanishiga necha daqiqa qoldi (0 = taymersiz)</label><input id=est inputmode=numeric value=0 oninput=dg(this)><label>Qoidalar</label><textarea id=erl rows=4>${t.rules}</textarea><div class=row><button class=btn onclick=closeM()>Bekor</button><button class="btn p" onclick=sedit(${id})>Saqlash</button></div>`)}
+function sedit(id){const t=T.find(x=>x.id==id);t.title=$('#en').value.trim()||t.title;if($('#ef'))t.fee=+$('#ef').value||t.fee;t.rules=$('#erl').value.trim();const m=+$('#est').value;if(m)t.start=Date.now()+m*60000;ad(t.title+': tahrirlandi');closeM();refresh()}
+function pk(e){e.parentElement.querySelectorAll('.ch').forEach(c=>c.classList.remove('on'));e.classList.add('on');const g=e.parentElement.dataset.g;if(g=='mode'){$('#mp').hidden=e.dataset.v=='TDM';$('#tmw').hidden=e.dataset.v=='TDM'}if(g=='fee')$('#fp').hidden=e.dataset.v=='BEPUL'}
+const gv=g=>$(`[data-g=${g}] .on`).dataset.v;
+function create(){modal(`<div class=mt>Yangi turnir</div><label>Nomi</label><input id=cn placeholder="NEXAR CUP #13">
+<label>Turi</label><div class=chs data-g=mode><b class="ch on" data-v=TDM onclick=pk(this)>⚔️ TDM</b><b class=ch data-v=BOSHQA onclick=pk(this)>🗺 BOSHQA</b></div>
+<div id=mp hidden><label>Karta</label><div class=chs data-g=map>${['Erangel','Livik','Miramar','Sanhok','Vikendi'].map((m,i)=>`<b class="ch ${i?'':'on'}" data-v=${m} onclick=pk(this)>${m}</b>`).join('')}</div></div>
+<div id=tmw hidden><label>Jamoa</label><div class=chs data-g=team><b class="ch on" data-v=1 onclick=pk(this)>SOLO</b><b class=ch data-v=2 onclick=pk(this)>DUO</b><b class=ch data-v=4 onclick=pk(this)>SQUAD</b></div></div>
+<label>O'rinlar soni (8, 16, 32 yoki istalgan)</label><input id=cs inputmode=numeric value=8 oninput=dg(this)>
+<label>Kategoriya</label><div class=chs data-g=cat>${['ELITE','PRO','GIRLS'].map((m,i)=>`<b class="ch ${i?'':'on'}" data-v=${m} onclick=pk(this)>${m}</b>`).join('')}</div>
+<label>Kirish</label><div class=chs data-g=fee><b class="ch on" data-v=BEPUL onclick=pk(this)>BEPUL</b><b class=ch data-v=PULLIK onclick=pk(this)>PULLIK</b></div>
+<div id=fp hidden><input id=cf inputmode=numeric placeholder="Narx (so'm)" oninput=dg(this)><input id=cp placeholder="To'lov rekvizitlari (karta raqami)"></div>
+<label>Boshlanishiga necha daqiqa (ixtiyoriy)</label><input id=cst inputmode=numeric placeholder="masalan 60" oninput=dg(this)>
+<label>Qoidalar (ixtiyoriy)</label><textarea id=crl rows=3 placeholder="Turnir qoidalari..."></textarea>
+<div class=row><button class=btn onclick=closeM()>Bekor</button><button class="btn p" onclick=mkT()>Yaratish</button></div>`)}
+function mkT(){const title=$('#cn').value.trim(),n=+$('#cs').value,mode=gv('mode'),paid=gv('fee')=='PULLIK',f=paid?+$('#cf').value:0;
+if(!title)return toast('Nomini kiriting');if(n<2)return toast("Kamida 2 ta o'rin");if(paid&&!f)return toast('Narxni kiriting');
+const t=mk(Math.max(0,...T.map(x=>x.id))+1,title,mode,mode=='TDM'?'':gv('map'),gv('cat'),'FAOL',f,n,0);t.pay=paid?($('#cp').value.trim()||"Rekvizitlar admin tomonidan yuboriladi"):'';t.team=mode=='TDM'?1:+gv('team');t.rules=$('#crl').value.trim();const st=+$('#cst').value;t.start=st?Date.now()+st*60000:0;T.unshift(t);ad(t.title+': yaratildi');closeM();bot(-1,openMsg(t));refresh()}
+function bgrid(p,ed){return `<div class=bg8>${B.map(([k,i,d])=>`<div class="bd ${p.b.includes(k)?'on':''} ${ed?'ed':''}" ${ed?`onclick="award(${p.id},&quot;${k}&quot;)"`:''}><i>${i}</i><b>${k}</b></div>`).join('')}</div>`}
+function award(u,k){const p=pl(u),i=p.b.indexOf(k);if(i>=0)p.b.splice(i,1);else{p.b.push(k);const bb=B.find(x=>x[0]==k);bot(u,`🎖 <b>Yangi nishon!</b><br>${bb[1]} <b>${k}</b> — ${bb[2]}<br>Tabriklaymiz, ${p.nick}!`)}closeM();player(u);refresh()}
+function tb2(u,k){if(k==1){ban.has(u)?ban.delete(u):ban.add(u);ad(nm(u)+(ban.has(u)?': bloklandi':': blokdan chiqarildi'))}else{const i=helpers.indexOf(u);i>=0?helpers.splice(i,1):helpers.push(u);ad(nm(u)+(i>=0?': yordamchilikdan olindi':': yordamchi admin qilindi'))}closeM();player(u);refresh()}
+function player(u){const p=pl(u);if(!p.nick)return;modal(`<div class=row style="gap:12px"><div class=av style="width:52px;height:52px;font-size:20px">${p.nick[0].toUpperCase()}</div><div><div class=mt>${p.nick}</div><div class=mu>PUBG ID: ${p.pid}<br>@${p.tg} · 🏆 ${p.w||0} g'alaba</div>${ban.has(p.id)?'<div class=mu style="color:#ff5a6e">🚫 Bloklangan</div>':''}${helpers.includes(p.id)?'<div class=mu style="color:var(--or)">🛡 Yordamchi admin</div>':''}</div></div><div class=h style="margin-top:14px">NISHONLAR${adm?' · admin: bosib bering/oling':''}</div>${bgrid(p,adm)}<a class="btn p" style="display:block;margin-top:14px;text-decoration:none;color:#fff;text-align:center" href="https://t.me/${p.tg}" target=_blank>✉️ Xabar yozish</a>${adm&&p.id!==0?`<div class=row style="margin-top:8px"><button class=btn onclick="tb2(${p.id},1)">${ban.has(p.id)?'✅ Blokdan chiqarish':'🚫 Bloklash'}</button><button class=btn onclick="tb2(${p.id},2)">${helpers.includes(p.id)?'Yordamchilikdan olish':'🛡 Yordamchi'}</button></div>`:''}`)}
+function srch(){const s=$('#srch');s.innerHTML=`<div class=dh><button class=bk onclick="$('#srch').classList.remove('in')">←</button><input id=sq placeholder="NIK yoki ID bo'yicha qidirish..." style="margin:0" oninput=sr(this.value)></div><div style="padding:6px 14px" id=sr></div>`;sr('');requestAnimationFrame(()=>{s.classList.add('in');$('#sq').focus()})}
+function sr(v){v=v.trim().toLowerCase();const r=P.filter(p=>p.nick&&(!v||p.nick.toLowerCase().includes(v)||p.pid.includes(v)));$('#sr').innerHTML=r.map(p=>`<button class=pl onclick="player(${p.id})"><div class=av>${p.nick[0].toUpperCase()}</div><div style="flex:1"><b>${p.nick}</b><div class=mu>ID ${p.pid}</div></div><span>${p.b.map(k=>B.find(x=>x[0]==k)[1]).join('')}</span></button>`).join('')||'<div class=mu style="text-align:center;padding:30px">O\'yinchi topilmadi</div>'}
+function inbox(){unread=0;hdr();modal(`<div class=mt>🤖 NEXAR BOT</div><div class=mu style="margin-bottom:8px">Avtomatik xabarlar va savollarga javoblar</div><div class=chs>${FQ.map((f,i)=>`<b class=ch onclick=askB(${i})>${f[0]}</b>`).join('')}</div>${log.map(l=>`<div class=bub><small>→ ${lab(l.to)} · ${l.t}</small>${l.h}</div>`).join('')||'<div class=mu>Hozircha xabar yo\'q</div>'}`)}
+function askB(i){log.unshift({to:0,h:`<b>❓ ${FQ[i][0]}</b><br>${FQ[i][1]}`,t:new Date().toLocaleTimeString('uz',{hour:'2-digit',minute:'2-digit'})});closeM();inbox()}
+function faq(){modal(`<div class=mt>❓ Savol-javob</div><div class=mu style="margin-bottom:10px">Bot ham shu savollarga avtomatik javob beradi</div>${FQ.map(([q,a])=>`<details class=fq><summary>${q}</summary><div>${a}</div></details>`).join('')}`)}
+function hof(){const c=T.filter(t=>t.champ!=null),top=[...P].filter(p=>p.nick&&p.w>0).sort((a,b)=>b.w-a.w).slice(0,10);modal(`<div class=mt>👑 HALL OF FAME</div><div class=h style="margin-top:12px">🏅 TOP-10 REYTING (g'alabalar)</div>${top.map((p,i)=>`<button class=pl onclick="player(${p.id})"><b style="width:22px;color:${i?'var(--m)':'var(--g)'}">${i+1}</b><div style="flex:1"><b>${p.nick}</b></div><span style="color:var(--g)">🏆 ${p.w}</span></button>`).join('')||'<div class=mu>Reyting bo\'sh</div>'}<div class=h style="margin-top:12px">CHEMPIONLAR</div>${c.map(t=>`<div class=champ style="margin:0 0 8px;text-align:left;display:flex;justify-content:space-between;align-items:center"><span style="color:#fff;font-size:12px">${t.title}</span><b style="font-size:14px;margin:0">🏆 ${nm(t.champ)}</b></div>`).join('')||'<div class=mu>Hali chempion yo\'q</div>'}`)}
+function save(){const n=$('#pn').value.trim(),i=$('#pi').value.trim();if(!n||!i)return toast('NIK va ID ni kiriting');const first=!me.nick;me.nick=n;me.pid=i;try{localStorage.nx=JSON.stringify({nick:n,pid:i})}catch(e){}
+if(first)bot(0,`👋 <b>NEXAR ESPORTS</b> ga xush kelibsiz, <b>${n}</b>!<br>✅ Profil saqlandi<br>🆔 PUBG ID: ${i}<br>Endi turnirlarga qo'shilishingiz mumkin 🎮`);toast('Saqlandi ✓');refresh()}
+function bc(){const v=$('#bm').value.trim();if(!v)return;bot(-1,'📢 '+v);$('#bm').value=''}
+function prof(m){const my=T.filter(t=>t.slots.some(s=>s.u===me.id)),hs=[];T.forEach(t=>t.rounds&&t.rounds.forEach((R,r)=>R.forEach(mt=>{if((mt.a===me.id||mt.b===me.id)&&mt.a!=null&&mt.b!=null){const o=mt.a===me.id?mt.b:mt.a;hs.push([t.title,sn(t,r),nm(o),mt.w==null?'…':mt.w===me.id?'G':'M',mt.sc||''])}})));
+const S={tr:T.length,ap:apps.length,lk:T.reduce((a,t)=>a+t.slots.filter(s=>s.s=='LOCKED').length,0),inc:T.reduce((a,t)=>a+t.fee*t.slots.filter(s=>s.s=='LOCKED').length,0),pl:P.filter(p=>p.nick).length};
+const box=(l,v)=>`<div class=sec style="margin:0;text-align:center;padding:10px"><b style="color:var(--r);font-size:18px">${v}</b><div class=mu style="font-size:9px">${l}</div></div>`;
+m.innerHTML=`<div class=pg><div class=sec style="margin:0 0 12px;display:flex;gap:12px;align-items:center"><div class=av style="width:54px;height:54px;font-size:20px">${(me.nick||'?')[0].toUpperCase()}</div><div><b>${me.nick||'Telegram foydalanuvchi'}</b><div class=mu>@${me.tg}${adm?' · <span style="color:var(--r)">ADMIN</span>':hp?' · <span style="color:var(--or)">YORDAMCHI</span>':''}</div></div></div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">${box('TURNIR',my.length)}${box("G'ALABA",me.w||0)}${box('NISHON',me.b.length)}</div>
+<div class=sec style="margin:0 0 12px"><div class=h>PUBG MA'LUMOTLARI</div><label>PUBG Nickname</label><input id=pn value="${me.nick}" placeholder="Nickname"><label>PUBG ID (faqat raqam)</label><input id=pi value="${me.pid}" inputmode=numeric oninput=dg(this) placeholder="123456789"><button class="btn p" style="width:100%" onclick=save()>Saqlash</button><div class=mu style="margin-top:8px;color:${me.nick?'#4ade80':'var(--or)'}">${me.nick?'✓ Saqlangan — turnirlarga ariza yuborishingiz mumkin':"⚠️ Turnirga qo'shilish uchun avval to'ldiring"}</div></div>
+<div class=sec style="margin:0 0 12px"><div class=h>NISHONLAR</div>${bgrid(me,false)}</div>
+<div class=sec style="margin:0 0 12px"><div class=h>MENING TURNIRLARIM</div>${my.map(t=>{const s=t.slots.find(x=>x.u===me.id);return `<button class="row sb" style="width:100%;padding:8px 0" onclick="tab('t');openT(${t.id})"><span style="font-size:13px;font-weight:700">${t.title}</span><span class=chip style="background:${s.s=='LOCKED'?'#22c55e22':'#f59e0b22'};color:${s.s=='LOCKED'?'#4ade80':'var(--or)'}">${s.s=='LOCKED'?'QATNASHMOQDA':"KO'RIB CHIQILMOQDA"}</span></button>`}).join('')||`<div class=mu>Hali turnirga qo'shilmagansiz</div>`}</div>
+<div class=sec style="margin:0 0 12px"><div class=h>📜 O'YINLAR TARIXI</div>${hs.map(x=>`<div class="row sb" style="padding:7px 0;border-bottom:1px solid #ffffff0d;font-size:12px"><div><b>vs ${x[2]}</b><div class=mu>${x[0]} · ${x[1]}${x[4]?' · '+x[4]:''}</div></div><span class=chip style="background:${x[3]=='G'?'#22c55e22':x[3]=='M'?'#e5142d22':'#f59e0b22'};color:${x[3]=='G'?'#4ade80':x[3]=='M'?'#ff5a6e':'var(--or)'}">${x[3]=='G'?"G'ALABA":x[3]=='M'?"MAG'LUBIYAT":'KUTILMOQDA'}</span></div>`).join('')||`<div class=mu>Hali o'yin yo'q</div>`}</div>
+<button class=btn style="width:100%;margin-bottom:8px" onclick=faq()>❓ Savol-javob</button>
+<a class="btn" style="display:block;text-decoration:none;color:#fff;margin-bottom:12px;text-align:center" href="https://t.me/mirzhayev" target=_blank>🆘 Yordam · @mirzhayev</a>
+${can()?`<div class=sec style="margin:0 0 12px;border-color:#e5142d55"><div class=h style="color:var(--r)">📋 BARCHA ARIZALAR (${apps.length})</div>${apps.map(appRow).join('')||"<div class=mu>Arizalar yo'q</div>"}</div>
+<div class=sec style="margin:0 0 12px;border-color:#e5142d55"><div class=h style="color:var(--r)">📨 SO'ROVLAR (${reqs.length})</div>${reqs.map(rqRow).join('')||"<div class=mu>Nizo va qaytarish so'rovlari yo'q</div>"}</div>`:''}
+${adm?`<div class=sec style="margin:0 0 12px;border-color:#e5142d55"><div class=h style="color:var(--r)">📊 STATISTIKA</div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">${box('TURNIRLAR',S.tr)}${box("O'YINCHILAR",S.pl)}${box('KUTILAYOTGAN ARIZA',S.ap)}${box('TASDIQLANGAN',S.lk)}</div><div class=sec style="margin:8px 0 0;text-align:center"><b style="color:var(--g);font-size:18px">${S.inc.toLocaleString('ru')} so'm</b><div class=mu style="font-size:9px">TUSHUM (tasdiqlangan to'lovlar)</div></div></div>
+<div class=sec style="margin:0 0 12px;border-color:#e5142d55"><div class=h style="color:var(--r)">🎖 NISHON BERISH / O'YINCHI BOSHQARUVI</div><button class="btn o" style="width:100%" onclick=srch()>🔍 O'yinchi qidirish</button><div class=mu style="margin-top:8px">🛡 Yordamchi adminlar: ${helpers.map(nm).join(', ')||'yo\'q'}<br>🚫 Bloklanganlar: ${[...ban].map(nm).join(', ')||'yo\'q'}</div></div>
+<div class=sec style="margin:0 0 12px;border-color:#e5142d55"><div class=h style="color:var(--r)">🧾 ADMIN JURNALI</div>${aud.slice(0,8).map(a=>`<div class=mu style="padding:4px 0;border-bottom:1px solid #ffffff0d">${a.t} · <b style="color:#fff">${a.r}</b> · ${a.x}</div>`).join('')||"<div class=mu>Hozircha harakat yo'q</div>"}</div>
+<div class=sec style="margin:0 0 12px;border-color:#e5142d55"><div class=h style="color:var(--r)">📢 BROADCAST</div><textarea id=bm rows=2 placeholder="Hammaga bot orqali xabar"></textarea><button class="btn p" style="width:100%" onclick=bc()>Yuborish</button></div>`:''}</div>`}
+const sl=$('#sl');'NEXAR'.split('').forEach((c,i)=>{const s=document.createElement('i');s.textContent=c;s.style.animationDelay=i*.09+'s';sl.appendChild(s)});
+hdr();main();
+setTimeout(()=>{$('#splash').style.opacity=0;$('#app').style.display='block';setTimeout(()=>$('#splash').remove(),450)},2000);
+</script></body></html>
